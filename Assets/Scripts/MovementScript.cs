@@ -9,10 +9,13 @@ public class MovementScript : MonoBehaviour
     public Transform transform;
 
     public float runSpeed = 40f;
+    public float jetpackMaxSpeed = 5f;
+    public float jetpackSpeed = 0f;
 
     float horizontalMove = 0f;
 
     bool jump = false;
+    bool jetpacking = false;
 
     float lastY;
     public float landingActivationY = 1.0f;
@@ -35,6 +38,11 @@ public class MovementScript : MonoBehaviour
             animator.SetBool("IsJumping", true);
         }
 
+        if (Input.GetButton("Jump"))
+        {
+            jetpacking = true;
+        }
+
         if (lastY > transform.position.y && transform.position.y < landingActivationY)
         {
             animator.SetBool("IsLanding", true);
@@ -51,7 +59,8 @@ public class MovementScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump, jetpacking);
         jump = false;
+        jetpacking = false;
     }
 }
