@@ -23,9 +23,10 @@ public class DeployEnemies : MonoBehaviour
 
     private void spawnEnemy(){
         GameObject enem = Instantiate(enemy) as GameObject;
-        enem.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y, screenBounds.y));
+        Debug.Log(enem.GetComponent<SpriteRenderer>().bounds.size);
+        enem.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y + 1.8f, screenBounds.y - (enem.GetComponent<SpriteRenderer>().bounds.size[1] / 2)));
     }
-
+ 
     IEnumerator enemyWave(){
         while(true){
             yield return new WaitForSeconds(respawnTime);
