@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeployEnemies : MonoBehaviour
+public class DeployGameObject : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject objectToSpawn;
     public float respawnTime = 1.0f;
     private Vector2 screenBounds;
     // Start is called before the first frame update
@@ -12,7 +12,7 @@ public class DeployEnemies : MonoBehaviour
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,Camera.main.transform.position.z));
-        StartCoroutine(enemyWave());
+        StartCoroutine(objectWave());
     }
 
     // Update is called once per frame
@@ -21,16 +21,16 @@ public class DeployEnemies : MonoBehaviour
         
     }
 
-    private void spawnEnemy(){
-        GameObject enem = Instantiate(enemy) as GameObject;
-        Debug.Log(enem.GetComponent<SpriteRenderer>().bounds.size);
-        enem.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y + 1.8f, screenBounds.y - (enem.GetComponent<SpriteRenderer>().bounds.size[1] / 2)));
+    private void spawnObject(){
+        GameObject obj = Instantiate(objectToSpawn) as GameObject;
+        Debug.Log(obj.GetComponent<SpriteRenderer>().bounds.size);
+        obj.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y + 1.8f, screenBounds.y - (obj.GetComponent<SpriteRenderer>().bounds.size[1] / 2)));
     }
  
-    IEnumerator enemyWave(){
+    IEnumerator objectWave(){
         while(true){
             yield return new WaitForSeconds(respawnTime);
-            spawnEnemy();
+            spawnObject();
         }
         
     }
