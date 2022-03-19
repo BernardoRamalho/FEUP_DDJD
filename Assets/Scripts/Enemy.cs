@@ -5,8 +5,10 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 10.0f;
+    public int health = 3;
     private Rigidbody2D rb;
     private Vector2 screenBounds;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +18,32 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public void TakeDamage (int dmg)
+    {
+        health -= dmg;
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(transform.position.x < -screenBounds.x * 2){
             Destroy(this.gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D (Collider2D hitInfo)
+    { 
+        Debug.Log(health);
+        if(hitInfo.name == "Bullet(Clone)"){
+            TakeDamage(1);
+        }
+        else if(hitInfo.name == "Player"){
+            Destroy(gameObject);
         }
     }
 }
