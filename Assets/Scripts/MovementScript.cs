@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-    public CharacterController2D controller;
+    public PlayerController2D playerController;
+    public Weapon shootingController;
+
     public Animator animator;
     public Transform transform;
 
@@ -14,7 +16,6 @@ public class MovementScript : MonoBehaviour
 
     float horizontalMove = 0f;
 
-    bool jump = false;
     bool jetpacking = false;
 
     float lastY;
@@ -32,15 +33,10 @@ public class MovementScript : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-            animator.SetBool("IsJumping", true);
-        }
-
         if (Input.GetButton("Jump"))
         {
             jetpacking = true;
+            animator.SetBool("IsJumping", true);
         }
 
         if (lastY > transform.position.y && transform.position.y < landingActivationY)
@@ -49,6 +45,11 @@ public class MovementScript : MonoBehaviour
         }
 
         lastY = transform.position.y;
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            shootingController.Shoot();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -59,8 +60,7 @@ public class MovementScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, jump, jetpacking);
-        jump = false;
+        playerController.Move(horizontalMove * Time.fixedDeltaTime, jetpacking);
         jetpacking = false;
     }
 }
