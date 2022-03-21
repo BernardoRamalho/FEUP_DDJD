@@ -47,10 +47,7 @@ public class PlayerController2D : MonoBehaviour
     }
 
     if (jetpack) {
-      jetpackScript.IncreaseForce();
       jetpackScript.Activate();
-    } else {
-      jetpackScript.DecreaseForce();
     }
   }
 }
