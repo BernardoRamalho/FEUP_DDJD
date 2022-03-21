@@ -7,14 +7,6 @@ public class PlayerController2D : MonoBehaviour
 {
   public float m_JumpForce = 400f;
 
-  public float m_JetpackForce = 0f;
-  public float m_JetpackForceIncrease = 10f;
-  public float m_JetpackMaxForce = 200f;
-  public float m_JetpackForceDecrease = 10f;
-  public float m_JetpackMinForce = 50f;
-
-  public float m_MovementSmoothing = .05f;
-
   public LayerMask m_WhatIsGround;
   public Transform m_GroundCheck;
   public Transform m_CeilingCheck;
@@ -25,12 +17,8 @@ public class PlayerController2D : MonoBehaviour
 
   private Rigidbody2D m_Rigidbody2D;
 
-  private Vector3 m_Velocity = Vector3.zero;
-
-  private void Awake()
-  {
-    m_Rigidbody2D = GetComponent<Rigidbody2D>();
-  }
+  public MoveScript moveScript;
+  public JetpackScript jetpackScript;
 
   // Update is called once per frame
   private void FixedUpdate()
@@ -55,22 +43,14 @@ public class PlayerController2D : MonoBehaviour
 
   public void Move(float move, bool jetpack) {
     if (m_Grounded) {
-      Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
-
-      m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+      moveScript.Move(move);
     }
 
     if (jetpack) {
-      m_JetpackForce += m_JetpackForceIncrease;
-      if(m_JetpackForce >= m_JetpackMaxForce) {
-        m_JetpackForce = m_JetpackMaxForce;
-      }
-      m_Rigidbody2D.AddForce(new Vector2(0f, m_JetpackForce));
+      jetpackScript.IncreaseForce();
+      jetpackScript.Activate();
     } else {
-      m_JetpackForce -= m_JetpackForceDecrease;
-      if (m_JetpackForce <= m_JetpackMinForce) {
-        m_JetpackForce = m_JetpackMinForce;
-      }
+      jetpackScript.DecreaseForce();
     }
   }
 }
