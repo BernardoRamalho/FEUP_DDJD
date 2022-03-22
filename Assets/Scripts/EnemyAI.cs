@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
 
-    private CharacterController2D character;
+    private PlayerController2D character;
     public float health = 100.0f;
 
     public Rigidbody2D rb;
@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        character = FindObjectOfType<CharacterController2D>();
+        character = FindObjectOfType<PlayerController2D>();
     }
 
     // Update is called once per frame
