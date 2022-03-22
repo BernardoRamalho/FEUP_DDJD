@@ -19,6 +19,7 @@ public class PlayerController2D : MonoBehaviour
 
   public MoveScript moveScript;
   public JetpackScript jetpackScript;
+  public float damage = 10f;
 
   // Update is called once per frame
   private void FixedUpdate()

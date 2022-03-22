@@ -9,10 +9,12 @@ public class EnemyAI : MonoBehaviour
     public float health = 100.0f;
     public float acceleration = 3.0f;
     public Weapon weapon;
-
-    public int shootingRate = 0;
-
     public Rigidbody2D rb;
+    public int shootingRate = 100;
+
+    [HideInInspector]
+    private int shootingTimer = 0;
+
     // Start is called before the first frame update
 
     public float moveSpeed;
@@ -25,6 +27,28 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+        Move();
+        
+        Attack();
+    }
+
+    void OnTriggerEnter2D (Collider2D hitInfo)
+    { 
+        if(hitInfo.name == "Bullet(Clone)"){
+            TakeDamage(character.damage);
+        }
+    }
+
+    private void TakeDamage (float dmg)
+    {
+        health -= dmg;
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    void Move(){
         if(character.transform.position.y - transform.position.y > 0.25 ){
             rb.velocity = new Vector2(0.0f, acceleration);
         }else if(character.transform.position.y - transform.position.y < - 0.25){
@@ -32,12 +56,14 @@ public class EnemyAI : MonoBehaviour
         }else{
             rb.velocity = new Vector2(0.0f, 0.0f);
         }
-        shootingRate++;
+    }
 
-        if(shootingRate == 100){
+    void Attack() {
+        shootingTimer++;
+
+        if(shootingTimer >= shootingRate){
             weapon.Shoot();
-            shootingRate = 0;
+            shootingTimer = 0;
         } 
-
     }
 }

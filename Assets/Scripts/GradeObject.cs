@@ -38,7 +38,6 @@ public class GradeObject : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D hitInfo)
     { 
-        //Debug.Log(health);
         if(hitInfo.name == "Bullet(Clone)"){
             TakeDamage(1);
         }
