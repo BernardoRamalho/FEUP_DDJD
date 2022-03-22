@@ -39,7 +39,7 @@ public class EnemyBullet : MonoBehaviour
             return;
         }
         rb.velocity =  transform.right * 0;
-        anim.Play("Enemy_Bullet_Impact");
-        Destroy(gameObject,0.1f);
+        anim.Play("EnemyBulletImpact");
+        Destroy(gameObject,0.25f);
     }
 }
