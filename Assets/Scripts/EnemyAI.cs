@@ -25,18 +25,19 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if(character.transform.position.y > transform.position.y){
-            rb.velocity = new Vector2(0.0f,acceleration);
-        }else if(character.transform.position.y < transform.position.y){
+        if(character.transform.position.y - transform.position.y > 0.25 ){
+            rb.velocity = new Vector2(0.0f, acceleration);
+        }else if(character.transform.position.y - transform.position.y < - 0.25){
             rb.velocity = new Vector2(0.0f, -1 * acceleration);
+        }else{
+            rb.velocity = new Vector2(0.0f, 0.0f);
         }
-
         shootingRate++;
 
         if(shootingRate == 100){
             weapon.Shoot();
             shootingRate = 0;
         } 
-        //transform.position = Vector3.MoveTowards(transform.position,)
+
     }
 }
