@@ -8,7 +8,10 @@ public class EnemyAI : MonoBehaviour
     private PlayerController2D character;
     public float health = 100.0f;
     public float acceleration = 3.0f;
-    
+    public Weapon weapon;
+
+    public int shootingRate = 0;
+
     public Rigidbody2D rb;
     // Start is called before the first frame update
 
@@ -22,15 +25,18 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        Debug.Log(character.transform.position.y);
         if(character.transform.position.y > transform.position.y){
             rb.velocity = new Vector2(0.0f,acceleration);
-            Debug.Log(transform.position);
         }else if(character.transform.position.y < transform.position.y){
             rb.velocity = new Vector2(0.0f, -1 * acceleration);
         }
-       
-        
+
+        shootingRate++;
+
+        if(shootingRate == 100){
+            weapon.Shoot();
+            shootingRate = 0;
+        } 
         //transform.position = Vector3.MoveTowards(transform.position,)
     }
 }

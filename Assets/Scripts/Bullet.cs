@@ -6,13 +6,15 @@ public class Bullet : MonoBehaviour
 {   
     public float speed = 20f;
     public Rigidbody2D rb;
-
+    public int direction = 1;
     private Vector2 screenBounds;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = transform.right * speed;
+ 
+        rb.velocity =  transform.right * speed * direction;
+        
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,Camera.main.transform.position.z));
 
     }
@@ -25,8 +27,12 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D ()
-    {
+    void OnTriggerEnter2D (Collider2D hitInfo)
+    {   
+        if(hitInfo.name == "Bullet(Clone)"){
+            return;
+        }
+
         Destroy(gameObject);
     }
 }
