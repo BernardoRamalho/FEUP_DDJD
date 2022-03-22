@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class GradeObject : MonoBehaviour
 {
     public float speed = 10.0f;
     public int health = 3;
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D hitInfo)
     { 
-        Debug.Log(health);
+        //Debug.Log(health);
         if(hitInfo.name == "Bullet(Clone)"){
             TakeDamage(1);
         }
