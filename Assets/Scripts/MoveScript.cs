@@ -9,14 +9,16 @@ public class MoveScript : MonoBehaviour
 
     private Vector3 m_Velocity = Vector3.zero;
     public float m_MovementSmoothing = .05f;
+    public float runSpeed = 40f;
 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    public void Move(float speed)
+    public void Move(float horizontalMove)
     {
+        float speed = horizontalMove * runSpeed * Time.fixedDeltaTime;
         Vector3 targetVelocity = new Vector2(speed * 10f, m_Rigidbody2D.velocity.y);
 
         m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);

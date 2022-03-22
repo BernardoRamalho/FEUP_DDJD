@@ -10,10 +10,6 @@ public class MovementScript : MonoBehaviour
     public Animator animator;
     public Transform transform;
 
-    public float runSpeed = 40f;
-    public float jetpackMaxSpeed = 5f;
-    public float jetpackSpeed = 0f;
-
     float horizontalMove = 0f;
 
     bool jetpacking = false;
@@ -29,7 +25,7 @@ public class MovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        horizontalMove = Input.GetAxisRaw("Horizontal");
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
@@ -60,7 +56,7 @@ public class MovementScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        playerController.Move(horizontalMove * Time.fixedDeltaTime, jetpacking);
+        playerController.Move(horizontalMove, jetpacking);
         jetpacking = false;
     }
 }

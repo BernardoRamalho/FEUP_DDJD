@@ -5,8 +5,6 @@ using UnityEngine.Events;
 
 public class PlayerController2D : MonoBehaviour
 {
-  public float m_JumpForce = 400f;
-
   public LayerMask m_WhatIsGround;
   public Transform m_GroundCheck;
   public Transform m_CeilingCheck;
