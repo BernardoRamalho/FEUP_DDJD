@@ -23,7 +23,6 @@ public class DeployGameObject : MonoBehaviour
 
     private void spawnObject(){
         GameObject obj = Instantiate(objectToSpawn) as GameObject;
-        Debug.Log(obj.GetComponent<SpriteRenderer>().bounds.size);
         obj.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y + 1.8f, screenBounds.y - (obj.GetComponent<SpriteRenderer>().bounds.size[1] / 2)));
     }
  
