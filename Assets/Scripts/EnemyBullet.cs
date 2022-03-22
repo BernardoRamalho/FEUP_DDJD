@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {   
     public float speed = 20f;
     public Rigidbody2D rb;
-    public int direction = 1;
+    public int direction = -1;
     public float damage = 10f;
     private Vector2 screenBounds;
 
@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour
             return;
         }
         rb.velocity =  transform.right * 0;
-        anim.Play("BulletImpact");
+        anim.Play("Enemy_Bullet_Impact");
         Destroy(gameObject,0.1f);
     }
 }
