@@ -10,10 +10,15 @@ public class Bullet : MonoBehaviour
     public float damage = 10f;
     private Vector2 screenBounds;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
  
+
+        anim = GetComponent<Animator>();
+
         rb.velocity =  transform.right * speed * direction;
         
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,Camera.main.transform.position.z));
@@ -34,6 +39,7 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        Destroy(gameObject);
+        anim.Play("BulletImpact");
+        Destroy(gameObject,0.1f);
     }
 }
