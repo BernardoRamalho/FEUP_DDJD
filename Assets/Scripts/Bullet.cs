@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public Rigidbody2D rb;
     public int direction = 1;
+    public float damage = 10f;
     private Vector2 screenBounds;
 
     // Start is called before the first frame update
