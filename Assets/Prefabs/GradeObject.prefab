@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7267455818492837354}
   - component: {fileID: 7267455818492837355}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: GradeObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: c0d7f06dc1fa63b46a9c66475659ab69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 623e8369a0ea0544ea97d6f191ee2769, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.53, y: 3.07}
+    oldSize: {x: 2.53, y: 3.04}
     newSize: {x: 2.53, y: 3.07}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
