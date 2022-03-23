@@ -8,9 +8,9 @@ public class BugAI : MonoBehaviour
 
     public float maxHealth = 50.0f;
     public float health;
-    public float acceleration = 3.0f;
+    public float acceleration = 10.0f;
     public Rigidbody2D rb;
-    public int chargingTime = 100;
+    public int chargingTime = 75;
     public float scaleFactor = 0.005f;
     public float chargingSpeed = 1.7f;
     private Vector2 screenBounds;

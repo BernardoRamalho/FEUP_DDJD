@@ -1527,7 +1527,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0059673786, y: -0.3282277}
@@ -1643,9 +1643,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   health: 0
-  acceleration: 3
+  acceleration: 10
   rb: {fileID: 0}
-  chargingTime: 100
+  chargingTime: 75
   scaleFactor: 0.005
   chargingSpeed: 1.7
 --- !u!1 &677204633
