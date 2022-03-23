@@ -2318,8 +2318,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1189353384}
   - component: {fileID: 1189353383}
-  - component: {fileID: 1189353386}
-  - component: {fileID: 1189353385}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -2339,6 +2337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db1abb50f111734fae9bdac81dea373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectsToSpawn:
+  - gameObject: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
+    respawnRatio: 5
+  - gameObject: {fileID: 4388610536519337183, guid: 1b18e368e808bac4e98219abe381b899, type: 3}
+    respawnRatio: 1
+  startingOrder: []
+  objectsOrder: []
 --- !u!4 &1189353384
 Transform:
   m_ObjectHideFlags: 0
@@ -2353,34 +2358,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1189353385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189353382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44584f7633b68bc489017907b512df90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 4388610536519337183, guid: 1b18e368e808bac4e98219abe381b899, type: 3}
-  respawnTime: 5
---- !u!114 &1189353386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189353382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44584f7633b68bc489017907b512df90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
-  respawnTime: 1
 --- !u!1 &1229212958
 GameObject:
   m_ObjectHideFlags: 0
