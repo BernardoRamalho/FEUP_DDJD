@@ -6,7 +6,9 @@ public class EnemyAI : MonoBehaviour
 {
 
     private PlayerController2D character;
-    public float health = 100.0f;
+
+    public float maxHealth = 100.0f;
+    public float health;
     public float acceleration = 3.0f;
     public Weapon weapon;
     public Rigidbody2D rb;
@@ -20,6 +22,7 @@ public class EnemyAI : MonoBehaviour
     public float moveSpeed;
     void Start()
     {
+        health = maxHealth;
         rb = this.GetComponent<Rigidbody2D>();
         character = FindObjectOfType<PlayerController2D>();
     }
@@ -62,7 +65,11 @@ public class EnemyAI : MonoBehaviour
         shootingTimer++;
 
         if(shootingTimer >= shootingRate){
-            weapon.Shoot();
+            if(maxHealth/health > 3.0){
+                weapon.SpecialPower();
+            }else{
+                weapon.Shoot();
+            }
             shootingTimer = 0;
         } 
     }
