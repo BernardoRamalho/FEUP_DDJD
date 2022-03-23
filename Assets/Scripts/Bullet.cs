@@ -38,8 +38,11 @@ public class Bullet : MonoBehaviour
         if(hitInfo.name == "Bullet(Clone)"){
             return;
         }
+
         rb.velocity =  transform.right * 0;
+
         anim.Play("BulletImpact");
+        
         Destroy(gameObject,0.1f);
     }
 }
