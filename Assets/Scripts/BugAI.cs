@@ -10,8 +10,9 @@ public class BugAI : MonoBehaviour
     public float health;
     public float acceleration = 3.0f;
     public Rigidbody2D rb;
-    public int chargingTime = 150;
+    public int chargingTime = 100;
     public float scaleFactor = 0.005f;
+    public float chargingSpeed = 1.7f;
     private Vector2 screenBounds;
 
     [HideInInspector] private int timer = 0;
@@ -78,7 +79,18 @@ public class BugAI : MonoBehaviour
     }
 
     void Attack(){
+        if(isCharging){
+            if(transform.position.x < (-1 * screenBounds.x)){
+                Destroy(gameObject);
+            }
+        }
+        else{
+            float xDistance = character.transform.position.x - transform.position.x;
+            float yDistance = character.transform.position.y - transform.position.y;
 
+            rb.velocity = new Vector2(xDistance * chargingSpeed, yDistance * chargingSpeed);
+            isCharging = true;
+        }
     }
 }
 
