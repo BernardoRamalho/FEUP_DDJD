@@ -2695,6 +2695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MovementSmoothing: 0.05
+  runSpeed: 40
 --- !u!50 &2075885435
 Rigidbody2D:
   serializedVersion: 4
@@ -2826,9 +2827,6 @@ MonoBehaviour:
   shootingController: {fileID: 2075885441}
   animator: {fileID: 2075885440}
   transform: {fileID: 2075885438}
-  runSpeed: 40
-  jetpackMaxSpeed: 5
-  jetpackSpeed: 0
   landingActivationY: 1
 --- !u!95 &2075885440
 Animator:
@@ -2876,7 +2874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f627b829118864ea268e0f67e36ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 0
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 55
