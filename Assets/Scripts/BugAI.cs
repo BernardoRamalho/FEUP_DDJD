@@ -92,5 +92,25 @@ public class BugAI : MonoBehaviour
             isCharging = true;
         }
     }
+
+    void OnTriggerEnter2D (Collider2D hitInfo)
+    {   
+        if(hitInfo.name == "Bullet(Clone)"){
+            TakeDamage(character.damage);
+        }
+        else if(hitInfo.name == "Player"){
+            Destroy(gameObject);
+        }
+    }
+
+    private void TakeDamage (float dmg)
+    {
+        health -= dmg;
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
 
