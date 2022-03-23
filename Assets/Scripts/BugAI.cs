@@ -10,8 +10,8 @@ public class BugAI : MonoBehaviour
     public float health;
     public float acceleration = 3.0f;
     public Rigidbody2D rb;
-    public int chargingTime = 100;
-    public float scaleFactor = 0.1f;
+    public int chargingTime = 150;
+    public float scaleFactor = 0.005f;
     private Vector2 screenBounds;
 
     [HideInInspector] private int timer = 0;
@@ -32,8 +32,6 @@ public class BugAI : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         character = FindObjectOfType<PlayerController2D>();
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,Camera.main.transform.position.z));
-        Debug.Log(screenBounds);
-        Debug.Log(transform.position);
     }
 
     // Update is called once per frame
@@ -57,8 +55,6 @@ public class BugAI : MonoBehaviour
         float x = 0.0f;
 
         if(transform.position.x > (screenBounds.x- screenBounds.x/3)){
-            Debug.Log(transform.position.x);
-            Debug.Log(screenBounds.x/3);
             x = -acceleration;   
         }
 
@@ -71,7 +67,14 @@ public class BugAI : MonoBehaviour
     }
 
     void Grow(){
+        timer++;
 
+        if(timer == chargingTime){
+            state = State.Attacking;
+            return;
+        }
+
+        transform.localScale = new Vector3(transform.localScale.x + scaleFactor, transform.localScale.y + scaleFactor, transform.localScale.z);
     }
 
     void Attack(){
