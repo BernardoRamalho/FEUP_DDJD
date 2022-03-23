@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyChargedBullet : MonoBehaviour
 {   
-    public float speed = 20f;
+    public float speed = 10f;
     public Rigidbody2D rb;
-    public int direction = 1;
+    public int direction = -1;
     public float damage = 10f;
     private Vector2 screenBounds;
 
@@ -35,11 +35,12 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D hitInfo)
     {   
-        if(hitInfo.name == "Bullet(Clone)"){
+        Debug.Log(hitInfo.name);
+        if(hitInfo.name != "Player"){
             return;
         }
         rb.velocity =  transform.right * 0;
-        anim.Play("BulletImpact");
-        Destroy(gameObject,0.1f);
+        anim.Play("Enemy_Charged_Bullet_Hit");
+        Destroy(gameObject,0.25f);
     }
 }
