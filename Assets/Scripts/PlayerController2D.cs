@@ -41,9 +41,6 @@ public class PlayerController2D : MonoBehaviour
   }
 
   public void Move(float move, bool jetpack) {
-    /*if (m_Grounded) {
-        moveScript.Move(move);
-    }*/
     moveScript.Move(move);
 
     if (jetpack) {

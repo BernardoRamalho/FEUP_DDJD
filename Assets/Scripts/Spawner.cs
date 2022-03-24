@@ -15,8 +15,11 @@ public class Spawner : MonoBehaviour
     }
 
     public List<ObjectToSpawn> objectsToSpawn = new List<ObjectToSpawn>();
-    public List<GameObject> startingOrder = new List<GameObject>();
-    public List<GameObject> objectsOrder = new List<GameObject>();
+    private List<GameObject> startingOrder = new List<GameObject>();
+    private List<GameObject> objectsOrder = new List<GameObject>();
+
+    public float bottomMargin;
+    public float topMargin;
 
     void Awake()
     {
@@ -39,7 +42,9 @@ public class Spawner : MonoBehaviour
 
     private void spawnObject(){
         GameObject obj = Instantiate(getElementFromSpawningList()) as GameObject;
-        obj.transform.position = new Vector2(screenBounds.x * 2, UnityEngine.Random.Range(-screenBounds.y + 1.8f, screenBounds.y - (obj.GetComponent<SpriteRenderer>().bounds.size[1] / 2)));
+        float minY = -screenBounds.y + (obj.GetComponent<SpriteRenderer>().bounds.size[1] / 2) + bottomMargin;
+        float maxY = screenBounds.y - (obj.GetComponent<SpriteRenderer>().bounds.size[1] / 2) - topMargin;
+        obj.transform.position = new Vector2(screenBounds.x * 2,  UnityEngine.Random.Range(minY, maxY));
     }
 
     IEnumerator objectWave(){

@@ -9,32 +9,20 @@ public class GroundMovement : MonoBehaviour
 
     public float speed = 1f;
 
-    public Vector3 resetFromPosition = new Vector3(-24, 0, 0);
-    public Vector3 resetToPosition = new Vector3(24, 0, 0);
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float resetFromX = -24f;
+    public float resetToX = 24f;
 
     void FixedUpdate()
     {
         transform.position = transform.position + new Vector3(-1f * speed * Time.deltaTime, 0, 0);
-        if (transform.position.x < resetFromPosition.x)
+        if (transform.position.x < resetFromX)
         {
-            transform.position = resetToPosition;
+            resetPosition();
         }
     }
 
     void resetPosition()
     {
-        transform.position = resetToPosition;
+        transform.position = new Vector3(resetToX, transform.position.y, transform.position.z);
     }
 }

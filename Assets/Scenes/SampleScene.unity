@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105023072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -2.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2144243482}
@@ -783,8 +783,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transform: {fileID: 105023073}
   speed: 5
-  resetFromPosition: {x: -20, y: -1.5, z: 0}
-  resetToPosition: {x: 20, y: -1.5, z: 0}
+  resetFromX: -20
+  resetToX: 20
 --- !u!1 &277983007
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +811,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277983007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.858461, y: 0.34956694, z: 1047.4451}
+  m_LocalPosition: {x: 13.858461, y: -1, z: 1047.4451}
   m_LocalScale: {x: 0.8, y: 0.5652493, z: 1}
   m_Children: []
   m_Father: {fileID: 1210356350}
@@ -882,8 +882,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transform: {fileID: 277983008}
   speed: 5
-  resetFromPosition: {x: -30, y: 2, z: 0}
-  resetToPosition: {x: 30, y: 2, z: 0}
+  resetFromX: -30
+  resetToX: 30
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.07, y: 1.7, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1025,7 +1025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096317360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: -1, z: 0}
+  m_LocalPosition: {x: 20, y: -2.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2144243482}
@@ -1657,8 +1657,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transform: {fileID: 1096317361}
   speed: 5
-  resetFromPosition: {x: -20, y: -1.5, z: 0}
-  resetToPosition: {x: 20, y: -1.5, z: 0}
+  resetFromX: -20
+  resetToX: 20
 --- !u!1 &1189353382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,10 +1691,10 @@ MonoBehaviour:
   objectsToSpawn:
   - gameObject: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
     respawnRatio: 5
-  - gameObject: {fileID: 4388610536519337183, guid: 1b18e368e808bac4e98219abe381b899, type: 3}
+  - gameObject: {fileID: 7035644442653954637, guid: ddfd234249303df41a7c7d38fd623c7b, type: 3}
     respawnRatio: 1
-  startingOrder: []
-  objectsOrder: []
+  bottomMargin: 2
+  topMargin: 2
 --- !u!4 &1189353384
 Transform:
   m_ObjectHideFlags: 0
@@ -2146,7 +2146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018032715}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.141539, y: 0.34956694, z: 1047.4451}
+  m_LocalPosition: {x: -16.141539, y: -1, z: 1047.4451}
   m_LocalScale: {x: 0.8, y: 0.5652493, z: 1}
   m_Children: []
   m_Father: {fileID: 1210356350}
@@ -2217,8 +2217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transform: {fileID: 2018032716}
   speed: 5
-  resetFromPosition: {x: -30, y: 2, z: 0}
-  resetToPosition: {x: 30, y: 2, z: 0}
+  resetFromX: -30
+  resetToX: 30
 --- !u!1 &2075885433
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,8 +2365,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075885433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: -2, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalPosition: {x: -6.9871, y: -2, z: 0}
+  m_LocalScale: {x: 0.71406996, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1229212959}
   - {fileID: 715283313}
@@ -2390,6 +2390,8 @@ MonoBehaviour:
   shootingController: {fileID: 2075885441}
   animator: {fileID: 2075885440}
   transform: {fileID: 2075885438}
+  canShoot: 1
+  shootingDelay: 0.5
   landingActivationY: 1
 --- !u!95 &2075885440
 Animator:

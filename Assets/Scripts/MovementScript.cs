@@ -14,6 +14,9 @@ public class MovementScript : MonoBehaviour
 
     bool jetpacking = false;
 
+    public bool canShoot = true;
+    public float shootingDelay;
+
     float lastY;
     public float landingActivationY = 1.0f;
 
@@ -42,10 +45,18 @@ public class MovementScript : MonoBehaviour
 
         lastY = transform.position.y;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && canShoot)
         {
             shootingController.Shoot();
+            canShoot = false;
+            StartCoroutine(ShootDelay());
         }
+    }
+
+    IEnumerator ShootDelay()
+    {
+        yield return new WaitForSeconds(shootingDelay);
+        canShoot = true;
     }
 
     void OnCollisionEnter2D(Collision2D col)
