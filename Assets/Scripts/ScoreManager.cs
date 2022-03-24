@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
     public bool scoreIncreasing;
     void Start()
     {
-        scoreText = GameObject.Find("Text").GetComponent<Text>();
+        scoreText = GameObject.Find("Score").GetComponent<Text>();
     }
 
     // Update is called once per frame
