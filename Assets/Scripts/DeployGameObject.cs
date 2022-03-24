@@ -18,19 +18,18 @@ public class DeployGameObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void spawnObject(){
         GameObject obj = Instantiate(objectToSpawn) as GameObject;
         obj.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y + 1.8f, screenBounds.y - (obj.GetComponent<SpriteRenderer>().bounds.size[1] / 2)));
     }
- 
+
     IEnumerator objectWave(){
         while(true){
             yield return new WaitForSeconds(respawnTime);
             spawnObject();
         }
-        
     }
 }
