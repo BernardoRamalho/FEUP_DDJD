@@ -9,8 +9,8 @@ public class GroundMovement : MonoBehaviour
 
     public float speed = 1f;
 
-    public Vector3 resetFromPosition = new Vector3(-20, 0, 0);
-    public Vector3 resetToPosition = new Vector3(20, 0, 0);
+    public Vector3 resetFromPosition = new Vector3(-24, 0, 0);
+    public Vector3 resetToPosition = new Vector3(24, 0, 0);
 
     // Start is called before the first frame update
     void Start()
