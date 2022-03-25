@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class Collectable : MonoBehaviour
 {
-    public float speed = 10.0f;
-    private Rigidbody2D rb;
-    private Vector2 screenBounds;
-    public ScoreManager scoreManager;
+    protected float speed = 10.0f;
+    protected Rigidbody2D rb;
+    protected Vector2 screenBounds;
+    protected ScoreManager scoreManager;
 
     
     // Start is called before the first frame update
@@ -26,18 +26,18 @@ public abstract class Collectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x < -screenBounds.x * 2){
-            Destroy(this.gameObject);
-        }
+        updateMovement();
     }
 
     void OnTriggerEnter2D (Collider2D hitInfo)
     { 
         if(hitInfo.name == "Player"){
             Destroy(gameObject);
-            giveScore();
+            giveCurrency();
         }
     }
 
-    public abstract void giveScore();
+    protected abstract void giveCurrency();
+
+    protected abstract void updateMovement();
 }

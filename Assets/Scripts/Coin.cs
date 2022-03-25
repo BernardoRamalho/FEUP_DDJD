@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Coin : Collectable
 {
-    public float scoreValue = 5.0f;
+    private float currencyValue = 5.0f;
 
-    public override void giveScore()
+    protected override void giveCurrency()
     {
-        scoreManager.addScore(scoreValue);
+        scoreManager.addScore(currencyValue);
+    }
+
+    protected override void updateMovement()
+    {
+        if(transform.position.x < -screenBounds.x * 2){
+            Destroy(this.gameObject);
+        }
     }
 }
