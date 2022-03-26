@@ -10,6 +10,8 @@ public class MovementScript : MonoBehaviour
     public Animator animator;
     public Transform transform;
 
+    Rigidbody2D rigidbody2D;
+
     float horizontalMove = 0f;
 
     bool jetpacking = false;
@@ -17,12 +19,11 @@ public class MovementScript : MonoBehaviour
     public bool canShoot = true;
     public float shootingDelay;
 
-    float lastY;
-    public float landingActivationY = 1.0f;
+    public float landingActivationVelocity = 0.0f;
 
-    void Start()
+    void Awake()
     {
-        lastY = transform.position.y;
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -36,14 +37,14 @@ public class MovementScript : MonoBehaviour
         {
             jetpacking = true;
             animator.SetBool("IsJumping", true);
+            animator.SetBool("IsLanding", false);
         }
 
-        if (lastY > transform.position.y && transform.position.y < landingActivationY)
+        if (rigidbody2D.velocity.y < landingActivationVelocity)
         {
             animator.SetBool("IsLanding", true);
+            animator.SetBool("IsJumping", false);
         }
-
-        lastY = transform.position.y;
 
         if (Input.GetButtonDown("Fire1") && canShoot)
         {
@@ -69,5 +70,6 @@ public class MovementScript : MonoBehaviour
     {
         playerController.Move(horizontalMove, jetpacking);
         jetpacking = false;
+        animator.SetBool("IsJumping", false);
     }
 }
