@@ -25,4 +25,8 @@ public class ScoreManager : MonoBehaviour
         scoreCount += pointsPerSecond * Time.deltaTime;
         scoreText.text = "" + (int) scoreCount;
     }
+
+    public void addScore(float scoreValue){
+        scoreCount += scoreValue;
+    }
 }
