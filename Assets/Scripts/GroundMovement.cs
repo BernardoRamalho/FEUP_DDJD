@@ -14,6 +14,7 @@ public class GroundMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        //speed+=1;
         transform.position = transform.position + new Vector3(-1f * speed * Time.deltaTime, 0, 0);
         if (transform.position.x < resetFromX)
         {
