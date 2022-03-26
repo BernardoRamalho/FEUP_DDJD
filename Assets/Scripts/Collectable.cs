@@ -7,7 +7,7 @@ public abstract class Collectable : MonoBehaviour
     protected float speed = 10.0f;
     protected Rigidbody2D rb;
     protected Vector2 screenBounds;
-    protected ScoreManager scoreManager;
+    protected CurrencyManager currencyManager;
 
     
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public abstract class Collectable : MonoBehaviour
 
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,Camera.main.transform.position.z));
 
-        scoreManager = FindObjectOfType<ScoreManager>();
+        currencyManager = FindObjectOfType<CurrencyManager>();
     }
 
 
