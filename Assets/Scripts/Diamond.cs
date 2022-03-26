@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Diamond : Collectable
 {
-    private int currencyValue = 25;
+    private int currencyValue = 15;
     public float ascendingVelocity = 1.0f;
     private bool isAscending = true;
     public int ascendingDuration = 100;

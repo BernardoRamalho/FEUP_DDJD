@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : Collectable
 {
-    private int currencyValue = 5;
+    private int currencyValue = 1;
 
     protected override void giveCurrency()
     {
