@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7267455818492837354}
   - component: {fileID: 7267455818492837355}
   m_Layer: 0
-  m_Name: GradeObject
+  m_Name: Obstacle - Grade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

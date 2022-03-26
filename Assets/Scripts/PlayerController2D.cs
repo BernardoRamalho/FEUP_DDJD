@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerController2D : MonoBehaviour
 {
@@ -39,6 +40,30 @@ public class PlayerController2D : MonoBehaviour
   private void OnCeilingEvent() {
 
   }
+
+
+  void OnTriggerEnter2D (Collider2D hitInfo)
+    { 
+      if(hitInfo.name.StartsWith("Floor")){
+        return;
+      }
+
+      if(hitInfo.name.StartsWith("PowerUp")){
+        return;
+      }
+
+      if(hitInfo.name.StartsWith("Obstacle")){
+        SceneManager.LoadScene("GameScene");
+        return;
+      }
+
+      if(hitInfo.name.StartsWith("Enemy")){
+        SceneManager.LoadScene("GameScene");
+        return;
+      }
+
+      Debug.Log(hitInfo.name);
+    }
 
   public void Move(float move, bool jetpack) {
     moveScript.Move(move);
