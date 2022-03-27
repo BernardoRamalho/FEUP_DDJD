@@ -19,18 +19,18 @@ public class Diamond : Collectable
             return;
         }
 
-        movementTime = isAscending ?  movementTime + 1 : movementTime - 1;
 
-        if(movementTime == ascendingDuration || movementTime == 0){
-            isAscending  = !isAscending;
-            return;
+        movementTime++;
+
+        if(movementTime == ascendingDuration){
+            isAscending  = false;
         }
 
        if(isAscending){
-            rb.velocity = new Vector2(-speed, ascendingVelocity / movementTime);
+            rb.velocity = new Vector2(-speed, ascendingVelocity);
 
        } else {
-           rb.velocity = new Vector2(-speed, -ascendingVelocity / movementTime);
+           rb.velocity = new Vector2(-speed, -ascendingVelocity);
        }
     }
 }
