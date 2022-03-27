@@ -1689,13 +1689,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToSpawn:
-  - gameObject: {fileID: 345796308773453644, guid: e1da6b00d3be55b4eaeeb6eecf7a50ae, type: 3}
+  - gameObject: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
     respawnRatio: 5
-  - gameObject: {fileID: 7035644442653954637, guid: ddfd234249303df41a7c7d38fd623c7b, type: 3}
+  - gameObject: {fileID: 345796308773453644, guid: e1da6b00d3be55b4eaeeb6eecf7a50ae, type: 3}
     respawnRatio: 1
   - gameObject: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
     respawnRatio: 10
-  - gameObject: {fileID: 345796308773453644, guid: e1da6b00d3be55b4eaeeb6eecf7a50ae, type: 3}
+  - gameObject: {fileID: 7035644442653954637, guid: ddfd234249303df41a7c7d38fd623c7b, type: 3}
     respawnRatio: 1
   bottomMargin: 2
   topMargin: 2
