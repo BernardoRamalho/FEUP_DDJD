@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Coin : Collectable
 {
-    private float currencyValue = 5.0f;
+    private int currencyValue = 1;
 
     protected override void giveCurrency()
     {
-        scoreManager.addScore(currencyValue);
+        currencyManager.addCurrency(currencyValue);
     }
 
     protected override void updateMovement()

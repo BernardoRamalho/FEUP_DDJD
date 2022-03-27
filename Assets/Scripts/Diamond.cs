@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Diamond : Collectable
 {
-    private float currencyValue = 25.0f;
+    private int currencyValue = 15;
     public float ascendingVelocity = 1.0f;
     private bool isAscending = true;
     public int ascendingDuration = 100;
     private int movementTime = 0;
     protected override void giveCurrency()
     {
-        scoreManager.addScore(currencyValue);
+        currencyManager.addCurrency(currencyValue);
     }
 
     protected override void updateMovement()
@@ -18,6 +18,7 @@ public class Diamond : Collectable
             Destroy(this.gameObject);
             return;
         }
+
 
         movementTime++;
 
