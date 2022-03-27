@@ -12,13 +12,16 @@ public class PlayerController2D : MonoBehaviour
 
   private float k_GroundedRadius = .2f;
   private bool m_Grounded;
-  private float k_CeilingRadius = .2f;
 
   private Rigidbody2D m_Rigidbody2D;
 
   public MoveScript moveScript;
   public JetpackScript jetpackScript;
   public float damage = 10f;
+
+  public bool shieldActive = true;
+
+  public Animator animator;
 
   // Update is called once per frame
   private void FixedUpdate()
@@ -33,17 +36,18 @@ public class PlayerController2D : MonoBehaviour
     }
   }
 
-  private void OnLandingEvent() {
-    m_Grounded = true;
+  public void activateShield() {
+    shieldActive = true;
+    animator.SetBool("ShieldActive", true);
   }
 
-  private void OnCeilingEvent() {
-
+  public void deactivateShield() {
+    shieldActive = false;
+    animator.SetBool("ShieldActive", false);
   }
-
 
   void OnTriggerEnter2D (Collider2D hitInfo)
-    { 
+    {
       if(hitInfo.name.StartsWith("Floor")){
         return;
       }
@@ -53,16 +57,20 @@ public class PlayerController2D : MonoBehaviour
       }
 
       if(hitInfo.name.StartsWith("Obstacle")){
-        SceneManager.LoadScene("GameScene");
-        return;
+        Debug.Log(hitInfo.name);
+        if (shieldActive) {
+          deactivateShield();
+          return;
+        } else {
+          SceneManager.LoadScene("GameScene");
+          return;
+        }
       }
 
       if(hitInfo.name.StartsWith("Enemy")){
         SceneManager.LoadScene("GameScene");
         return;
       }
-
-      Debug.Log(hitInfo.name);
     }
 
   public void Move(float move, bool jetpack) {
