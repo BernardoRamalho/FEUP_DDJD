@@ -1689,9 +1689,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToSpawn:
-  - gameObject: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
+  - gameObject: {fileID: 345796308773453644, guid: e1da6b00d3be55b4eaeeb6eecf7a50ae, type: 3}
     respawnRatio: 5
   - gameObject: {fileID: 7035644442653954637, guid: ddfd234249303df41a7c7d38fd623c7b, type: 3}
+    respawnRatio: 1
+  - gameObject: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
+    respawnRatio: 10
+  - gameObject: {fileID: 345796308773453644, guid: e1da6b00d3be55b4eaeeb6eecf7a50ae, type: 3}
     respawnRatio: 1
   bottomMargin: 2
   topMargin: 2
@@ -2393,7 +2397,7 @@ MonoBehaviour:
   transform: {fileID: 2075885438}
   canShoot: 1
   shootingDelay: 0.5
-  landingActivationY: 1
+  landingActivationVelocity: 0
 --- !u!95 &2075885440
 Animator:
   serializedVersion: 3
@@ -2448,6 +2452,8 @@ MonoBehaviour:
   moveScript: {fileID: 2075885434}
   jetpackScript: {fileID: 2075885443}
   damage: 10
+  shieldActive: 0
+  animator: {fileID: 2075885440}
 --- !u!114 &2075885443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2480,7 +2486,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075885433}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
