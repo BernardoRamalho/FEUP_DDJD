@@ -34,6 +34,7 @@ public class Shield : MonoBehaviour
 
     private void StartPowerUp(GameObject playerGameObject) {
         PlayerController2D script = playerGameObject.GetComponent<PlayerController2D>();
+        
         script.activateShield();
     }
 }
