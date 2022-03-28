@@ -39,8 +39,11 @@ public class Coffee : PowerUp
     IEnumerator EndPowerUp(GameObject playerGameObject)
     {
         yield return new WaitForSeconds(effectDuration);
+
         MovementScript script = playerGameObject.GetComponent<MovementScript>();
+        
         script.shootingDelay = normalShootingDelay;
+
         Destroy(gameObject);
     }
 }
