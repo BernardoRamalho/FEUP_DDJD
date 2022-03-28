@@ -1049,26 +1049,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db1abb50f111734fae9bdac81dea373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - gameObject: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
-    respawnRatio: 5
-    objectType: 
-  - gameObject: {fileID: 345796308773453644, guid: e1da6b00d3be55b4eaeeb6eecf7a50ae, type: 3}
-    respawnRatio: 1
-    objectType: 
-  - gameObject: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
-    respawnRatio: 10
-    objectType: 
-  - gameObject: {fileID: 7035644442653954637, guid: ddfd234249303df41a7c7d38fd623c7b, type: 3}
-    respawnRatio: 1
-    objectType: 
   obstacles:
   - {fileID: 7267455818492837355, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
   powerUps:
   - {fileID: 6636621274063938701, guid: ddfd234249303df41a7c7d38fd623c7b, type: 3}
   - {fileID: 8773166623426277657, guid: e1da6b00d3be55b4eaeeb6eecf7a50ae, type: 3}
-  bottomMargin: 2
-  topMargin: 2
+  enemies:
+  - {fileID: 1967682061, guid: 24626189a8e825d4da8c927d5916b378, type: 3}
+  - {fileID: 8248326931671485948, guid: d8f99891d76bb7644bdabeabadf8f319, type: 3}
+  maxSpawnedObstacles: 10
+  minSpawnedObstacles: 5
+  bottomMargin: 1
+  topMargin: 1
 --- !u!4 &1189353384
 Transform:
   m_ObjectHideFlags: 0
