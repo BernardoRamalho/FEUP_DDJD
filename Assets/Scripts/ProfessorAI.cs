@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProfessorAI : MonoBehaviour
+public class ProfessorAI : Enemy
 {
 
     private PlayerController2D character;
