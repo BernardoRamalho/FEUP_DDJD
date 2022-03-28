@@ -111,17 +111,18 @@ public class Spawner : MonoBehaviour
 
     int spawnTypeIndex = UnityEngine.Random.Range(1, spawnTypes.Length);
 
-    if(spawnTypes[spawnTypeIndex] == typeToSpawn.ToString()){
-      getNewSpawnType();
-      return;
-    }
-
     // TODO: Refactor This
     if(spawnTypeIndex == 1){
       typeToSpawn = spawnType.PowerUp;
     }
     else{
-      typeToSpawn = spawnType.Enemy;
+      Enemy enemy = FindObjectOfType<Enemy>();
+
+      if(enemy != null){
+        typeToSpawn = spawnType.PowerUp;
+      } else{
+        typeToSpawn = spawnType.Enemy;
+      }
     }
 
     objectsToSpawn = 1;
