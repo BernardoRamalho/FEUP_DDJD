@@ -19,9 +19,14 @@ public class Spawner : MonoBehaviour
   {
     public GameObject gameObject;
     public float respawnRatio;
+    public String objectType;
   }
 
   public List<ObjectToSpawn> objectsToSpawn = new List<ObjectToSpawn>();
+
+  public List<Obstacle> obstacles = new List<Obstacle>();
+  public List<PowerUp> powerUps = new List<PowerUp>();
+
   private List<GameObject> startingOrder = new List<GameObject>();
   private List<GameObject> objectsOrder = new List<GameObject>();
 
@@ -39,7 +44,7 @@ public class Spawner : MonoBehaviour
 
     scoreManager = FindObjectOfType<ScoreManager>();
 
-
+    //parseObjectsToSpawn();
     foreach(ObjectToSpawn objectToSpawn in objectsToSpawn) {
       for(int i = 0; i < objectToSpawn.respawnRatio; i++) {
         startingOrder.Add(objectToSpawn.gameObject);

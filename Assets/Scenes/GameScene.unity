@@ -1052,12 +1052,21 @@ MonoBehaviour:
   objectsToSpawn:
   - gameObject: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
     respawnRatio: 5
+    objectType: 
   - gameObject: {fileID: 345796308773453644, guid: e1da6b00d3be55b4eaeeb6eecf7a50ae, type: 3}
     respawnRatio: 1
+    objectType: 
   - gameObject: {fileID: 7267455818492837352, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
     respawnRatio: 10
+    objectType: 
   - gameObject: {fileID: 7035644442653954637, guid: ddfd234249303df41a7c7d38fd623c7b, type: 3}
     respawnRatio: 1
+    objectType: 
+  obstacles:
+  - {fileID: 7267455818492837355, guid: 2e8c11bf95ade234693c444b984a6996, type: 3}
+  powerUps:
+  - {fileID: 6636621274063938701, guid: ddfd234249303df41a7c7d38fd623c7b, type: 3}
+  - {fileID: 8773166623426277657, guid: e1da6b00d3be55b4eaeeb6eecf7a50ae, type: 3}
   bottomMargin: 2
   topMargin: 2
 --- !u!4 &1189353384
