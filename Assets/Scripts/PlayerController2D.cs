@@ -6,13 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController2D : MonoBehaviour
 {
-  public LayerMask m_WhatIsGround;
-  public Transform m_GroundCheck;
-  public Transform m_CeilingCheck;
-
-  private float k_GroundedRadius = .2f;
-  private bool m_Grounded;
-
   private Rigidbody2D m_Rigidbody2D;
 
   public MoveScript moveScript;
@@ -22,19 +15,6 @@ public class PlayerController2D : MonoBehaviour
   public bool shieldActive = true;
 
   public Animator animator;
-
-  // Update is called once per frame
-  private void FixedUpdate()
-  {
-    m_Grounded = false;
-
-    Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
-    for (int i = 0; i < colliders.Length; i++) {
-      if (colliders[i].gameObject != gameObject) {
-        m_Grounded = true;
-      }
-    }
-  }
 
   public void activateShield() {
     shieldActive = true;

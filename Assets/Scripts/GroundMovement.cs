@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GroundMovement : MonoBehaviour
 {
-
-    public Transform transform;
-
     public float speed = 1f;
 
     public float resetFromX = -24f;

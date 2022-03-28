@@ -8,10 +8,6 @@ public class MovementScript : MonoBehaviour
     public Weapon shootingController;
 
     public Animator animator;
-    public Transform transform;
-
-    Rigidbody2D rigidbody2D;
-
     float horizontalMove = 0f;
 
     bool jetpacking = false;
@@ -20,11 +16,6 @@ public class MovementScript : MonoBehaviour
     public float shootingDelay;
 
     public float landingActivationVelocity = 0.0f;
-
-    void Awake()
-    {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -40,7 +31,7 @@ public class MovementScript : MonoBehaviour
             animator.SetBool("IsLanding", false);
         }
 
-        if (rigidbody2D.velocity.y < landingActivationVelocity)
+        if (GetComponent<Rigidbody2D>().velocity.y < landingActivationVelocity)
         {
             animator.SetBool("IsLanding", true);
             animator.SetBool("IsJumping", false);
