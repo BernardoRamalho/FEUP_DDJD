@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProfessorAI : MonoBehaviour
+public class ProfessorAI : Enemy
 {
 
     private PlayerController2D character;
@@ -17,6 +17,8 @@ public class ProfessorAI : MonoBehaviour
     [HideInInspector]
     private int shootingTimer = 0;
 
+    private Vector2 screenBounds;
+
     // Start is called before the first frame update
 
     public float moveSpeed;
@@ -25,6 +27,7 @@ public class ProfessorAI : MonoBehaviour
         health = maxHealth;
         rb = this.GetComponent<Rigidbody2D>();
         character = FindObjectOfType<PlayerController2D>();
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,Camera.main.transform.position.z));
     }
 
     // Update is called once per frame
@@ -52,12 +55,20 @@ public class ProfessorAI : MonoBehaviour
         }
     }
     void Move(){
+        float xMovement = 0.0f;
+
+        if(transform.position.x > (screenBounds.x - screenBounds.x/3)){
+            xMovement = -acceleration * 3;   
+        }
+
         if(character.transform.position.y - transform.position.y > 0.25 ){
-            rb.velocity = new Vector2(0.0f, acceleration);
+            rb.velocity = new Vector2(xMovement, acceleration);
+
         }else if(character.transform.position.y - transform.position.y < - 0.25){
-            rb.velocity = new Vector2(0.0f, -1 * acceleration);
+            rb.velocity = new Vector2(xMovement, -1 * acceleration);
+
         }else{
-            rb.velocity = new Vector2(0.0f, 0.0f);
+            rb.velocity = new Vector2(xMovement, 0.0f);
         }
     }
 

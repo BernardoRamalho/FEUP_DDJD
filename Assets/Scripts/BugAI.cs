@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BugAI : MonoBehaviour
+public class BugAI : Enemy
 {
     private PlayerController2D character;
 
