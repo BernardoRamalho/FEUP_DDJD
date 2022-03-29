@@ -37,6 +37,9 @@ public abstract class Collectable : MonoBehaviour
         }
     }
 
+    public void incrementSpeed(float speedIncrement){
+        speed = speed + speedIncrement;
+    }
     protected abstract void giveCurrency();
 
     protected abstract void updateMovement();

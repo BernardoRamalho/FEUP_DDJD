@@ -57,7 +57,6 @@ public class PlayerController2D : MonoBehaviour
       }
 
       if(hitInfo.name.StartsWith("Obstacle")){
-        Debug.Log(hitInfo.name);
         if (shieldActive) {
           deactivateShield();
           return;
@@ -68,8 +67,13 @@ public class PlayerController2D : MonoBehaviour
       }
 
       if(hitInfo.name.StartsWith("Enemy")){
-        SceneManager.LoadScene("GameScene");
-        return;
+        if (shieldActive) {
+          deactivateShield();
+          return;
+        } else {
+          SceneManager.LoadScene("GameScene");
+          return;
+        }
       }
     }
 
