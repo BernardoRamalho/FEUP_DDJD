@@ -156,9 +156,9 @@ RectTransform:
   m_Father: {fileID: 1708821658}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 579, y: 306}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -160, y: -30}
   m_SizeDelta: {x: 300, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87778324
@@ -312,7 +312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f4dd715f1f1c142aa46a333a6e6bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transform: {fileID: 277983008}
   speed: 5
   resetFromX: -30
   resetToX: 30
@@ -546,7 +545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f4dd715f1f1c142aa46a333a6e6bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transform: {fileID: 1161252768}
   speed: 5
   resetFromX: -34.5
   resetToX: 34.5
@@ -947,35 +945,15 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -7, y: 1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -10, y: 4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 36
+  - m_RefCount: 34
     m_Data: {fileID: 11400000, guid: 0207ea4729b2361428db86b1b7dcb896, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 36
+  - m_RefCount: 34
     m_Data: {fileID: 21300000, guid: 238c96de8da8c3b4897161c4ba2cb077, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 36
+  - m_RefCount: 34
     m_Data:
       e00: 1
       e01: 0
@@ -994,7 +972,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 36
+  - m_RefCount: 34
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1170,9 +1148,9 @@ RectTransform:
   m_Father: {fileID: 1708821658}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -564, y: 306}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 160, y: -30}
   m_SizeDelta: {x: 300, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1520574869
@@ -1331,8 +1309,8 @@ Canvas:
   m_GameObject: {fileID: 1708821654}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1341,7 +1319,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_TargetDisplay: 0
 --- !u!224 &1708821658
 RectTransform:
@@ -1918,35 +1896,15 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -7, y: 1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -10, y: 4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 36
+  - m_RefCount: 34
     m_Data: {fileID: 11400000, guid: 0207ea4729b2361428db86b1b7dcb896, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 36
+  - m_RefCount: 34
     m_Data: {fileID: 21300000, guid: 238c96de8da8c3b4897161c4ba2cb077, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 36
+  - m_RefCount: 34
     m_Data:
       e00: 1
       e01: 0
@@ -1965,13 +1923,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 36
+  - m_RefCount: 34
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -17, y: -7, z: 0}
-  m_Size: {x: 35, y: 12, z: 1}
+  m_Size: {x: 49, y: 13, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -2003,7 +1961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f4dd715f1f1c142aa46a333a6e6bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transform: {fileID: 1746692890}
   speed: 5
   resetFromX: -34.5
   resetToX: 34.5
@@ -2128,7 +2085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f4dd715f1f1c142aa46a333a6e6bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transform: {fileID: 2018032716}
   speed: 5
   resetFromX: -30
   resetToX: 30
@@ -2303,7 +2259,6 @@ MonoBehaviour:
   playerController: {fileID: 2075885442}
   shootingController: {fileID: 2075885441}
   animator: {fileID: 2075885440}
-  transform: {fileID: 2075885438}
   canShoot: 1
   shootingDelay: 0.5
   landingActivationVelocity: 0
@@ -2353,11 +2308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f627b829118864ea268e0f67e36ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 55
-  m_GroundCheck: {fileID: 1229212959}
-  m_CeilingCheck: {fileID: 715283313}
   moveScript: {fileID: 2075885434}
   jetpackScript: {fileID: 2075885443}
   damage: 10
