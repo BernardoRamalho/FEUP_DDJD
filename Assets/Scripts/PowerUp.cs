@@ -19,5 +19,9 @@ public abstract class PowerUp : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,Camera.main.transform.position.z));
     }
 
+    public void incrementSpeed(float speedIncrement){
+        speed = speed + speedIncrement;
+    }
+
     protected abstract void StartPowerUp(GameObject playerGameObject);
 }

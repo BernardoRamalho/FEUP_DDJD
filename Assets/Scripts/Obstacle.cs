@@ -26,4 +26,8 @@ public abstract class Obstacle : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void incrementSpeed(float speedIncrement){
+        speed = speed + speedIncrement;
+    }
 }

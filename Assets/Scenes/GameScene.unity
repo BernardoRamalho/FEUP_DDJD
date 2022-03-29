@@ -1035,6 +1035,9 @@ MonoBehaviour:
   enemies:
   - {fileID: 1967682061, guid: 24626189a8e825d4da8c927d5916b378, type: 3}
   - {fileID: 8248326931671485948, guid: d8f99891d76bb7644bdabeabadf8f319, type: 3}
+  collectables:
+  - {fileID: 8012985033412510787, guid: b086b73f845c2734787cea768c5bf2b6, type: 3}
+  - {fileID: 481841781240904857, guid: 0ea814d7a23c92e428cf76ba11d8a54a, type: 3}
   maxSpawnedObstacles: 10
   minSpawnedObstacles: 5
   bottomMargin: 1

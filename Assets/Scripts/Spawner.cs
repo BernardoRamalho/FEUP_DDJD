@@ -7,7 +7,8 @@ public class Spawner : MonoBehaviour
   private enum spawnType {
     Obstacle,
     PowerUp,
-    Enemy
+    Enemy,
+    Collectable
   }
 
   private spawnType typeToSpawn = spawnType.Obstacle;
@@ -16,6 +17,7 @@ public class Spawner : MonoBehaviour
   public List<Obstacle> obstacles = new List<Obstacle>();
   public List<PowerUp> powerUps = new List<PowerUp>();
   public List<Enemy> enemies = new List<Enemy>();
+  public List<Collectable> collectables = new List<Collectable>();
 
   private int spawnedObjects = 0;
   public int maxSpawnedObstacles;
@@ -62,6 +64,9 @@ public class Spawner : MonoBehaviour
         case spawnType.Enemy:
           spawnEnemy();
           break;
+        case spawnType.Collectable:
+          spawnCollectable();
+          break;
       }
 
       if(spawnedObjects == objectsToSpawn){
@@ -75,6 +80,8 @@ public class Spawner : MonoBehaviour
 
     Obstacle obstacle = Instantiate(obstacles[obstacleIndex]);
 
+    obstacle.incrementSpeed(scoreManager.scoreCount / 150.0f);
+
     obstacle.transform.position = new Vector2(screenBounds.x * 2,  getYPosition(obstacle.GetComponent<SpriteRenderer>()));
   }
 
@@ -82,6 +89,8 @@ public class Spawner : MonoBehaviour
     int powerUpIndex = UnityEngine.Random.Range(0, powerUps.Count);
 
     PowerUp powerUp = Instantiate(powerUps[powerUpIndex]);
+
+    powerUp.incrementSpeed(scoreManager.scoreCount / 150.0f);
 
     powerUp.transform.position = new Vector2(screenBounds.x * 2,  getYPosition(powerUp.GetComponent<SpriteRenderer>()));
   }
@@ -91,6 +100,16 @@ public class Spawner : MonoBehaviour
     Enemy enemy = Instantiate(enemies[enemyIndex]);
 
     enemy.transform.position = new Vector2(screenBounds.x * 2,  getYPosition(enemy.GetComponent<SpriteRenderer>()));
+  }
+
+  private void spawnCollectable(){
+    int collectableIndex = UnityEngine.Random.Range(0, collectables.Count);
+
+    Collectable collectable = Instantiate(collectables[collectableIndex]);
+
+    collectable.incrementSpeed(scoreManager.scoreCount / 150.0f);
+
+    collectable.transform.position = new Vector2(screenBounds.x * 2,  getYPosition(collectable.GetComponent<SpriteRenderer>()));
   }
 
   private float getYPosition(SpriteRenderer sprite){
@@ -114,6 +133,9 @@ public class Spawner : MonoBehaviour
     // TODO: Refactor This
     if(spawnTypeIndex == 1){
       typeToSpawn = spawnType.PowerUp;
+    }
+    else if(spawnTypeIndex == 3) {
+      typeToSpawn = spawnType.Collectable;
     }
     else{
       Enemy enemy = FindObjectOfType<Enemy>();
