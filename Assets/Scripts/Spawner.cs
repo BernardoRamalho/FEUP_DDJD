@@ -80,7 +80,7 @@ public class Spawner : MonoBehaviour
 
     Obstacle obstacle = Instantiate(obstacles[obstacleIndex]);
 
-    obstacle.incrementSpeed(scoreManager.scoreCount / 150.0f);
+    obstacle.incrementSpeed(scoreManager.scoreCount / 75.0f);
 
     obstacle.transform.position = new Vector2(screenBounds.x * 2,  getYPosition(obstacle.GetComponent<SpriteRenderer>()));
   }
@@ -90,7 +90,7 @@ public class Spawner : MonoBehaviour
 
     PowerUp powerUp = Instantiate(powerUps[powerUpIndex]);
 
-    powerUp.incrementSpeed(scoreManager.scoreCount / 150.0f);
+    powerUp.incrementSpeed(scoreManager.scoreCount / 75.0f);
 
     powerUp.transform.position = new Vector2(screenBounds.x * 2,  getYPosition(powerUp.GetComponent<SpriteRenderer>()));
   }
@@ -107,7 +107,7 @@ public class Spawner : MonoBehaviour
 
     Collectable collectable = Instantiate(collectables[collectableIndex]);
 
-    collectable.incrementSpeed(scoreManager.scoreCount / 150.0f);
+    collectable.incrementSpeed(scoreManager.scoreCount / 75.0f);
 
     collectable.transform.position = new Vector2(screenBounds.x * 2,  getYPosition(collectable.GetComponent<SpriteRenderer>()));
   }
