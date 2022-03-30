@@ -16,14 +16,18 @@ public class PlayerController2D : MonoBehaviour
 
   public Animator animator;
 
+  public GameObject hudIcon;
+
   public void activateShield() {
     shieldActive = true;
     animator.SetBool("ShieldActive", true);
+    hudIcon.GetComponent<ChangeSprite>().SwitchSprite();
   }
 
   public void deactivateShield() {
     shieldActive = false;
     animator.SetBool("ShieldActive", false);
+    hudIcon.GetComponent<ChangeSprite>().SwitchSprite();
   }
 
   void OnTriggerEnter2D (Collider2D hitInfo)
