@@ -7,12 +7,12 @@ public class ProfessorAI : Enemy
 
     private PlayerController2D character;
 
-    public float maxHealth = 100.0f;
-    public float health;
     public float acceleration = 3.0f;
     public Weapon weapon;
     public Rigidbody2D rb;
     public int shootingRate = 100;
+
+    public Health healthScript;
 
     [HideInInspector]
     private int shootingTimer = 0;
@@ -24,7 +24,6 @@ public class ProfessorAI : Enemy
     public float moveSpeed;
     void Start()
     {
-        health = maxHealth;
         rb = this.GetComponent<Rigidbody2D>();
         character = FindObjectOfType<PlayerController2D>();
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,Camera.main.transform.position.z));
@@ -32,14 +31,14 @@ public class ProfessorAI : Enemy
 
     // Update is called once per frame
     void Update()
-    {   
+    {
         Move();
-        
+
         Attack();
     }
 
     void OnTriggerEnter2D (Collider2D hitInfo)
-    { 
+    {
         if(hitInfo.name == "Bullet(Clone)"){
             TakeDamage(character.damage);
         }
@@ -47,9 +46,9 @@ public class ProfessorAI : Enemy
 
     private void TakeDamage (float dmg)
     {
-        health -= dmg;
+        healthScript.health -= dmg;
 
-        if(health <= 0)
+        if(healthScript.health <= 0)
         {
             Destroy(gameObject);
         }
@@ -58,7 +57,7 @@ public class ProfessorAI : Enemy
         float xMovement = 0.0f;
 
         if(transform.position.x > (screenBounds.x - screenBounds.x/3)){
-            xMovement = -acceleration * 3;   
+            xMovement = -acceleration * 3;
         }
 
         if(character.transform.position.y - transform.position.y > 0.25 ){
@@ -76,12 +75,12 @@ public class ProfessorAI : Enemy
         shootingTimer++;
 
         if(shootingTimer >= shootingRate){
-            if(maxHealth/health > 3.0){
+            if(healthScript.maxHealth / healthScript.health > 3.0){
                 weapon.SpecialPower();
             }else{
                 weapon.Shoot();
             }
             shootingTimer = 0;
-        } 
+        }
     }
 }

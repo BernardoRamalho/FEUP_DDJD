@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class GradeObject : Obstacle
 {
-    public int health = 3;
+    public Health healthScript;
 
     public void TakeDamage (int dmg)
     {
-        health -= dmg;
+        healthScript.health -= dmg;
 
-        if(health <= 0)
+        if(healthScript.health <= 0)
         {
             Destroy(gameObject);
         }
     }
 
-    
+
     void OnTriggerEnter2D (Collider2D hitInfo)
     {
 
