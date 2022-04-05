@@ -45,7 +45,7 @@ public class PlayerController2D : MonoBehaviour
           deactivateShield();
           return;
         } else {
-          SceneManager.LoadScene("GameScene");
+          EndGame();
           return;
         }
       }
@@ -55,17 +55,22 @@ public class PlayerController2D : MonoBehaviour
           deactivateShield();
           return;
         } else {
-          SceneManager.LoadScene("GameScene");
+          EndGame();
           return;
         }
       }
     }
 
-  public void Move(float move, bool jetpack) {
-    moveScript.Move(move);
+    public void Move(float move, bool jetpack) {
+        moveScript.Move(move);
 
-    if (jetpack) {
-      jetpackScript.Activate();
+        if (jetpack) {
+            jetpackScript.Activate();
+        }
     }
-  }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
 }
