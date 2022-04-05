@@ -19,11 +19,15 @@ public class ProfessorAI : Enemy
 
     private Vector2 screenBounds;
 
+    private Animator anim;
+
     // Start is called before the first frame update
 
     public float moveSpeed;
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         rb = this.GetComponent<Rigidbody2D>();
         character = FindObjectOfType<PlayerController2D>();
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,Screen.height,Camera.main.transform.position.z));
@@ -76,8 +80,12 @@ public class ProfessorAI : Enemy
 
         if(shootingTimer >= shootingRate){
             if(healthScript.maxHealth / healthScript.health > 3.0){
+                
+                anim.Play("Professor_Shoot2");
                 weapon.SpecialPower();
             }else{
+                Debug.Log(anim);
+                anim.Play("Professor_Shoot");
                 weapon.Shoot();
             }
             shootingTimer = 0;
