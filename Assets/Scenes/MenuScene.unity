@@ -2467,7 +2467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FEUP Flightclub
+  m_Text: FEUP Flight Club
 --- !u!222 &1968476699
 CanvasRenderer:
   m_ObjectHideFlags: 0
