@@ -43,4 +43,6 @@ public abstract class Collectable : MonoBehaviour
     protected abstract void giveCurrency();
 
     protected abstract void updateMovement();
+
+    public abstract int getCurrencyValue();
 }

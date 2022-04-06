@@ -17,4 +17,8 @@ public class Coin : Collectable
             Destroy(this.gameObject);
         }
     }
+
+    public override int getCurrencyValue(){
+        return currencyValue;
+    }
 }

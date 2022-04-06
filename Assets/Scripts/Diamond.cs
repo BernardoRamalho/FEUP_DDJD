@@ -33,4 +33,8 @@ public class Diamond : Collectable
            rb.velocity = new Vector2(-speed, -ascendingVelocity);
        }
     }
+
+    public override int getCurrencyValue(){
+        return currencyValue;
+    }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8285047750831258899}
   m_Layer: 0
   m_Name: BoxCoins
-  m_TagString: Untagged
+  m_TagString: Horizontal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,9 +39,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8285047750831258899}
     m_Modifications:
+    - target: {fileID: 940455989630797478, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1357481681614290823, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
       propertyPath: m_Name
       value: LineCoins (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680708029351462525, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702776754054778687, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443985222005308229, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7459168760886314556, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
       propertyPath: m_RootOrder
@@ -87,6 +103,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8644954619491813825, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
 --- !u!4 &6465586496864065487 stripped
@@ -101,9 +121,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8285047750831258899}
     m_Modifications:
+    - target: {fileID: 940455989630797478, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1357481681614290823, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
       propertyPath: m_Name
       value: LineCoins
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680708029351462525, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702776754054778687, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443985222005308229, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7459168760886314556, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
       propertyPath: m_RootOrder
@@ -147,6 +183,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7459168760886314556, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644954619491813825, guid: ff65b44892aa35845b56e3559ec8fc68, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

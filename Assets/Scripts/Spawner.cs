@@ -19,6 +19,8 @@ public class Spawner : MonoBehaviour
   public List<Enemy> enemies = new List<Enemy>();
   public List<Collectable> collectables = new List<Collectable>();
 
+  public List<GameObject> coinFormations = new List<GameObject>();
+
   private int spawnedObjects = 0;
   public int maxSpawnedObstacles;
   public int minSpawnedObstacles;
@@ -105,11 +107,45 @@ public class Spawner : MonoBehaviour
   private void spawnCollectable(){
     int collectableIndex = UnityEngine.Random.Range(0, collectables.Count);
 
+    if(collectables[collectableIndex].getCurrencyValue() == 1){
+      StartCoroutine(spawnCoinFormation());
+      return;
+    }
+     
     Collectable collectable = Instantiate(collectables[collectableIndex]);
 
     collectable.incrementSpeed(scoreManager.scoreCount / 75.0f);
 
     collectable.transform.position = new Vector2(screenBounds.x * 2,  getYPosition(collectable.GetComponent<SpriteRenderer>()));
+  }
+
+  private IEnumerator spawnCoinFormation(){
+    int formationIndex = UnityEngine.Random.Range(0, coinFormations.Count);
+    int numberOfFormations = 1;
+
+    if(coinFormations[formationIndex].tag != "FEUP"){
+      numberOfFormations = UnityEngine.Random.Range(1, 6);
+    }
+
+    for(int i = 0; i < numberOfFormations; i++){
+      GameObject formation = Instantiate(coinFormations[formationIndex]);
+    
+      float minY, maxY;
+
+      if(formation.tag == "Horizontal"){
+        minY = -screenBounds.y + 1.5f + bottomMargin;
+        maxY = screenBounds.y - 1.5f - topMargin;
+      }
+      else {
+        minY = -screenBounds.y + 5.0f + bottomMargin;
+        maxY = screenBounds.y - 5.0f - topMargin;
+      }
+
+      formation.transform.position = new Vector2(screenBounds.x * 2,  UnityEngine.Random.Range(minY, maxY));
+
+      yield return new WaitForSeconds(1);
+    }
+    
   }
 
   private float getYPosition(SpriteRenderer sprite){

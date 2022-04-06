@@ -331,6 +331,36 @@ MonoBehaviour:
   speed: 5
   resetFromX: -30
   resetToX: 30
+--- !u!1 &413131013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 413131014}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &413131014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413131013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.9982488, y: -0.23213118, z: -106.06695}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1084,10 @@ MonoBehaviour:
   collectables:
   - {fileID: 8012985033412510787, guid: b086b73f845c2734787cea768c5bf2b6, type: 3}
   - {fileID: 481841781240904857, guid: 0ea814d7a23c92e428cf76ba11d8a54a, type: 3}
+  coinFormations:
+  - {fileID: 8285047750831258896, guid: 56562f228a0b7d7489fdd4bb97dd3d4f, type: 3}
+  - {fileID: 2472426346894525924, guid: 208881a7b4c52034f9483bb2aef782d1, type: 3}
+  - {fileID: 8034882476849695176, guid: 45c7585d42727c64ba06207ea7b6ede9, type: 3}
   maxSpawnedObstacles: 10
   minSpawnedObstacles: 5
   bottomMargin: 1
@@ -1605,7 +1639,7 @@ RectTransform:
   - {fileID: 1219966324}
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.575, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
