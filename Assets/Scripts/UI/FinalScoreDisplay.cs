@@ -16,6 +16,7 @@ public class FinalScoreDisplay : MonoBehaviour
     void Start(){
         finalScoreDisplay.SetActive(false);
     }
+    
     // Start is called before the first frame update
     public void Display(int finalScore)
     {
