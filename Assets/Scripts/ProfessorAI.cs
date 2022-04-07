@@ -64,6 +64,11 @@ public class ProfessorAI : Enemy
             xMovement = -acceleration * 3;
         }
 
+        if(character == null){
+            rb.velocity = new Vector2(xMovement, 0.0f);
+            return;
+        }
+
         if(character.transform.position.y - transform.position.y > 0.25 ){
             rb.velocity = new Vector2(xMovement, acceleration);
 

@@ -85,6 +85,11 @@ public class BugAI : Enemy
             }
         }
         else{
+            if(character == null){
+                 rb.velocity = new Vector2(-1 * chargingSpeed, -1 * chargingSpeed);
+                return;
+            }
+
             float xDistance = character.transform.position.x - transform.position.x;
             float yDistance = character.transform.position.y - transform.position.y;
 

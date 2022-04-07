@@ -71,6 +71,15 @@ public class PlayerController2D : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.LoadScene("MenuScene");
+
+      CurrencyManager currencyManager = FindObjectOfType<CurrencyManager>();
+      ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
+
+      int finalScore = (int) scoreManager.scoreCount + 2 * currencyManager.currencyCount;
+
+      Resources.FindObjectsOfTypeAll<FinalScoreDisplay>()[0].Display(finalScore);
+
+      Destroy(gameObject);
     }
+
 }

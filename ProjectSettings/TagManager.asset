@@ -8,6 +8,7 @@ TagManager:
   - Horizontal
   - Vertical
   - FEUP
+  - ScoreViewer
   layers:
   - Default
   - TransparentFX
